@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const userRoute = require("./routes/users");
 const projectsRoute = require('./routes/projects');
+const adminRoute = require('./routes/admin')
 require("dotenv").config();
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
@@ -33,6 +34,7 @@ app.use(
 //-----------Routes-----------
 app.use("/api/user", userRoute);
 app.use("/api/projects",projectsRoute);
+app.use("/api/admin",adminRoute)
 
 app.listen(5000, () => {
   console.log("server connected on port 5000");

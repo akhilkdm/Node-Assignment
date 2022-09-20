@@ -5,7 +5,6 @@ const session = require("express-session");
 //----------session check----------
 const loggedInCheck = (req, res, next) => {
   if (req.session.userData) {
-    console.log("akhil");
     next();
   } else {
     res.json("You are not logged in");

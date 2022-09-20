@@ -2,15 +2,21 @@ const mongoose = require("mongoose");
 
 const ProjectSchema = new mongoose.Schema(
   {
+    userId: {
+      type: String,
+      required: true,
+    },
     projectName: {
       type: String,
       required: true,
     },
     startDate: {
       type: Date,
+      required:true
     },
     estimatedHours: {
       type: Number,
+      required: true
     },
     tools: {
       type: Array,
